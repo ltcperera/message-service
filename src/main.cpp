@@ -17,3 +17,15 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
+
+#include "gtest/gtest.h"
+#include <iostream>
+
+using namespace std;
+
+GTEST_API_ int main(int argc, char **argv)
+{
+    cout << "Running message-service tests...\n";
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}

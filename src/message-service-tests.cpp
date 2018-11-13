@@ -18,9 +18,22 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+#include "gtest/gtest.h"
+extern "C" {
 #include "message-service.h"
+}
 
-MESSAGE_SERVICE_HANDLE message_service_init()
+// Define a set of messages we can use for testing
+typedef enum _MESSAGE_IDS
 {
-    return 0;
+    MESSAGE_A,
+    MESSAGE_B,
+    MESSAGE_C,
+    MESSAGE_D
+} MessageIDs;
+
+// Define message data that we can use for testing
+TEST(MessageService, Initialization)
+{
+    MESSAGE_SERVICE_HANDLE handle = message_service_init();
 }

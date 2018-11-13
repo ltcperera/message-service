@@ -1,3 +1,5 @@
+cmake_minimum_required(VERSION 3.10)
+
 # Download and unpack googletest at configure time
 configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
 execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
@@ -33,7 +35,7 @@ endif()
 # Now simply link against gtest or gtest_main as needed. Eg
 
 include_directories("inc")
-file(GLOB_RECURSE SOURCES "src/*.c")
+file(GLOB_RECURSE SOURCES "src/*.cpp" "src/*.c")
 
 add_executable(message-service-test ${SOURCES})
 target_link_libraries(message-service-test gtest_main)
